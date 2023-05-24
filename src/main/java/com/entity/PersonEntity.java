@@ -1,5 +1,6 @@
 package com.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,7 +19,7 @@ public class PersonEntity {
 	private String name;
 	private String mobno;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "aid",referencedColumnName = "aid")
 	 AddressEntity addressEntity;
 	
